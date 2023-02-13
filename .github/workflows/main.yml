@@ -1,32 +1,9 @@
-name: Deployement
-
-on:
-  push:
-    branches:
-      - main # 分支
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
-  build:
-
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: node version
-        run: node -v
-
-      - name: npm version
-        run: npm -v
-
-      - name: Install and Build
-        run: |#执行命令
-          npm run start
-        env:
-          CI: false
-      - name: Upload artifact
-          uses: actions/upload-pages-artifact@v1
-          with:
-            path: ./src/main/webapp
-
-
+      - name: List files in the repository
+      - run: npm run start
