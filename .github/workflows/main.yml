@@ -1,0 +1,32 @@
+name: Deployement
+
+on:
+  push:
+    branches:
+      - main # 分支
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: node version
+        run: node -v
+
+      - name: npm version
+        run: npm -v
+
+      - name: Install and Build
+        run: |#执行命令
+          npm run start
+        env:
+          CI: false
+      - name: Upload artifact
+          uses: actions/upload-pages-artifact@v1
+          with:
+            path: ./src/main/webapp
+
+
