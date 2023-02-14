@@ -40,6 +40,11 @@ jobs:
         release_name: ${{ github.ref }}
         draft: false
         prerelease: false
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+          enable-AzPSSession: true
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
       with:
