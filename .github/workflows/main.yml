@@ -41,8 +41,9 @@ jobs:
         draft: false
         prerelease: false
     - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
+      uses: actions/upload-artifact@v3
+      with:
+          name: my-artifact
           path: ./build/draw.war
 
   deploy:
