@@ -41,8 +41,8 @@ jobs:
         draft: false
         prerelease: false
     - name: Azure WebApp
-        uses: Azure/webapps-deploy@v2
-        with:
+      uses: Azure/webapps-deploy@v2
+      with:
           app-name: my-app-name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: my/target/*.war
