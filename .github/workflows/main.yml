@@ -9,7 +9,7 @@ on:
       - main # 当main分支发生push操作时，将执行所属工作流程
   pull_request_target:
     branches:
-      - '*'
+      - main
 
 jobs:
   build:
