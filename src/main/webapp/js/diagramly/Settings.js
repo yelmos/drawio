@@ -225,7 +225,7 @@ var mxSettings =
 			isNew: true,
 			unit: mxConstants.POINTS,
 			isRulerOn: false,
-			ui:"dark"
+			ui:"white"
 		};
 	},
 	save: function()
@@ -297,7 +297,7 @@ var mxSettings =
 			
 			if (mxSettings.settings.ui == null)
 			{
-				mxSettings.settings.ui = 'dark';
+				mxSettings.settings.ui = 'white';
 			}
 			
 			if (mxSettings.settings.formatWidth == null)

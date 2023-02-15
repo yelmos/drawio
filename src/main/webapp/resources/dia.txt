@@ -1132,12 +1132,17 @@ inputpropertiesset=输入节点属性配置
 layername=隐藏层名称
 layernamerule='layer'起始的字符串
 neuronsize=神经元数量
-neuronsizerule=正整数
+neuronsizerule=元组
 encodingtime=编码时间(ms)
 encodingtype=编码格式
+# connect
+kernel_size=卷积核大小
+stride=卷积步长
+padding=特征图填充宽度
+kernelrule=正整数或元组
 # layer
 layerpropertiesset=隐藏层属性配置
-neuronsize=神经元数量(个)
+neuronsize=神经元组形状
 neurontype=神经元类型
 leakmode=电位衰减模式
 leakmoderule=神经元电位衰减模式，0：if模式不衰减，其他表示具体衰减值
@@ -1150,6 +1155,13 @@ leaksign=脉冲衰减
 leaksignrule=脉冲经过神经网络是否衰减,YES:衰减，NO:不衰减
 resetModeOption1=重置为0
 resetModeOption2=重置为当前电位减去发放阈值
+StatusMonitor=状态监视器
+StatusMonitorOption1=None
+StatusMonitorOption2=V
+pulsemonitor=脉冲监视器
+pulsemonitorrule=脉冲监视器选择，0：脉冲为False，1：脉冲为True
+PulseMonitorOption1=False
+PulseMonitorOption2=True
 # connector
 connectorproperties=连接属性配置
 connectorname=权重名称

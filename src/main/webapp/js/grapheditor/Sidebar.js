@@ -1066,7 +1066,7 @@ Sidebar.prototype.addGeneralPalette = function(expand)
 		this.createVertexTemplateEntryDarwin('dashed=1;fontSize=19;ellipse;whiteSpace=wrap;html=1;', 120, 80, 'output', 'output', null, null, 'oval ellipse state', "output"),
 		this.addEntry(lineTags + 'edge title multiplicity', mxUtils.bind(this, function()
 		{
-			var edge = new mxCell('type: FULL', new mxGeometry(0, 0, 0, 0), 'endArrow=classic;html=1;', "connector");
+			var edge = new mxCell('type: Link', new mxGeometry(0, 0, 0, 0), 'endArrow=classic;html=1;', "connector");
 			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
 			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
 			edge.geometry.relative = true;

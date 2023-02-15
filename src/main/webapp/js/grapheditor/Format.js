@@ -452,8 +452,8 @@ Format.prototype.refresh = function () {
 				mxUtils.write(label, mxResources.get('connectorproperties'));
 				div.appendChild(label);
 			} else if (cell.type === 'input') {
-				mxUtils.write(label, mxResources.get('inputpropertiesset'));
-				div.appendChild(label);
+				// mxUtils.write(label, mxResources.get('inputpropertiesset'));
+				// div.appendChild(label);
 			} else if (cell.type === 'layer') {
 				mxUtils.write(label, mxResources.get('layerpropertiesset'));
 				div.appendChild(label);
@@ -3575,7 +3575,8 @@ ItemPropertiesPanel.prototype.init = function () {
 	var graph = editor.graph;
 	var cell = graph.getSelectionCell();
 	if (cell.type === 'input') {
-		this.container.appendChild(this.InputPropertiesDialog(this.createPanel()));
+		console.log(cell.type);
+		// this.container.appendChild(this.InputPropertiesDialog(this.createPanel()));
 	} else if (cell.type === 'layer') {
 		console.log(cell.type);
 		this.container.appendChild(this.LayerPropertiesDialog(this.createPanel()));
@@ -3688,71 +3689,72 @@ ItemPropertiesPanel.prototype.InputPropertiesDialog = function (div) {
 	layerName.appendChild(layerNameValue);
 
 	// neuron size
-	var neuronSize = document.createElement('div');
-	neuronSize.setAttribute('title', mxResources.get('neuronsize'));
-	mxUtils.write(neuronSize, mxResources.get('neuronsize') + ' :');
-	neuronSize.setAttribute('type', 'text');
-	neuronSize.style.marginTop = "6px";
-	neuronSize.style.marginBottom = '6px';
-	neuronSize.style.marginLeft = "25px";
-	neuronSize.style.width = '100%';
-	neuronSize.style.height = '20px';
-	neuronSize.style.boxSizing = 'border-box';
+	// var neuronSize = document.createElement('div');
+	// neuronSize.setAttribute('title', mxResources.get('neuronsize'));
+	// mxUtils.write(neuronSize, mxResources.get('neuronsize') + ' :');
+	// neuronSize.setAttribute('type', 'text');
+	// neuronSize.style.marginTop = "6px";
+	// neuronSize.style.marginBottom = '6px';
+	// neuronSize.style.marginLeft = "25px";
+	// neuronSize.style.width = '100%';
+	// neuronSize.style.height = '20px';
+	// neuronSize.style.boxSizing = 'border-box';
 
-	var neuronSizeValue = document.createElement('input');
-	neuronSizeValue.setAttribute('type', 'text');
-	neuronSizeValue.style.width = '150px';
-	neuronSizeValue.style.height = '20px';
-	neuronSizeValue.style.boxSizing = 'border-box';
-	neuronSizeValue.style.float = "right";
-	neuronSizeValue.style.marginRight = "80px";
-	neuronSizeValue.style.border = "soild";
-	neuronSizeValue.style.borderWidth = "1.5px";
-	if (properties.get('neuronsize') === undefined) {
-		neuronSizeValue.setAttribute('placeholder', '0');
-	} else {
-		neuronSizeValue.value = properties.get('neuronsize');
-	}
-	neuronSize.appendChild(neuronSizeValue);
+	// var neuronSizeValue = document.createElement('input');
+	// neuronSizeValue.setAttribute('type', 'text');
+	// neuronSizeValue.style.width = '150px';
+	// neuronSizeValue.style.height = '20px';
+	// neuronSizeValue.style.boxSizing = 'border-box';
+	// neuronSizeValue.style.float = "right";
+	// neuronSizeValue.style.marginRight = "80px";
+	// neuronSizeValue.style.border = "soild";
+	// neuronSizeValue.style.borderWidth = "1.5px";
+	// if (properties.get('neuronsize') === undefined) {
+	// 	neuronSizeValue.setAttribute('placeholder', '0');
+	// } else {
+	// 	neuronSizeValue.value = properties.get('neuronsize');
+	// }
+	// neuronSize.appendChild(neuronSizeValue);
 
 	//encoding type
-	var encodingType = document.createElement("div");
-	encodingType.setAttribute("title", mxResources.get("encodingtype"));
-	mxUtils.write(encodingType, mxResources.get("encodingtype") + " :");
-	encodingType.setAttribute("type", "text");
-	encodingType.style.marginTop = "6px";
-	encodingType.style.marginBottom = "6px";
-	encodingType.style.marginLeft = "25px";
-	encodingType.style.width = "100%";
-	encodingType.style.height = "20px";
-	encodingType.style.boxSizing = "border-box";
-	var encodingTypeSelect = document.createElement("select");
-	encodingTypeSelect.style.width = '150px';
-	encodingTypeSelect.style.height = "20px";
-	encodingTypeSelect.style.float = "right";
-	encodingTypeSelect.style.marginRight = "80px";
-	encodingTypeSelect.style.border = "soild";
-	encodingTypeSelect.style.borderWidth = "1.5px";
-	var encodingTypeOption1 = document.createElement("option");
-	mxUtils.write(encodingTypeOption1, "poisson");
-	var encodingTypeOption2 = document.createElement("option");
-	mxUtils.write(encodingTypeOption2, "blank_encoder");
-	if (properties.get('encodingtype') === 'poisson') {
-		encodingTypeOption1.setAttribute("selected", "selected");
-	} else if (properties.get('encodingtype') === 'blank_encoder') {
-		encodingTypeOption2.setAttribute("selected", "selected");
-	}
-	encodingTypeSelect.appendChild(encodingTypeOption1);
-	encodingTypeSelect.appendChild(encodingTypeOption2);
-	encodingType.appendChild(encodingTypeSelect);
+	// var encodingType = document.createElement("div");
+	// encodingType.setAttribute("title", mxResources.get("encodingtype"));
+	// mxUtils.write(encodingType, mxResources.get("encodingtype") + " :");
+	// encodingType.setAttribute("type", "text");
+	// encodingType.style.marginTop = "6px";
+	// encodingType.style.marginBottom = "6px";
+	// encodingType.style.marginLeft = "25px";
+	// encodingType.style.width = "100%";
+	// encodingType.style.height = "20px";
+	// encodingType.style.boxSizing = "border-box";
+	// var encodingTypeSelect = document.createElement("select");
+	// encodingTypeSelect.style.width = '150px';
+	// encodingTypeSelect.style.height = "20px";
+	// encodingTypeSelect.style.float = "right";
+	// encodingTypeSelect.style.marginRight = "80px";
+	// encodingTypeSelect.style.border = "soild";
+	// encodingTypeSelect.style.borderWidth = "1.5px";
+	// var encodingTypeOption1 = document.createElement("option");
+	// mxUtils.write(encodingTypeOption1, "poisson");
+	// var encodingTypeOption2 = document.createElement("option");
+	// mxUtils.write(encodingTypeOption2, "blank_encoder");
+	// if (properties.get('encodingtype') === 'poisson') {
+	// 	encodingTypeOption1.setAttribute("selected", "selected");
+	// } else if (properties.get('encodingtype') === 'blank_encoder') {
+	// 	encodingTypeOption2.setAttribute("selected", "selected");
+	// }
+	// encodingTypeSelect.appendChild(encodingTypeOption1);
+	// encodingTypeSelect.appendChild(encodingTypeOption2);
+	// encodingType.appendChild(encodingTypeSelect);
 
 	// newProp.appendChild(nameInput);
 	// top.appendChild(newProp);
 	// div.appendChild(layerName);
-	div.appendChild(neuronSize);
-	div.appendChild(encodingType);
+	// div.appendChild(neuronSize);
+	// div.appendChild(encodingType);
 	// div.appendChild(top);
-	names = ['neuronsize', 'encodingtype'];
+	// names = ['neuronsize', 'encodingtype'];
+	// names = ['neuronsize'];
 	var addBtn = mxUtils.button(mxResources.get('addProperty'), function () {
 		var name = nameInput.value;
 
@@ -3819,7 +3821,7 @@ ItemPropertiesPanel.prototype.InputPropertiesDialog = function (div) {
 
 	var applyBtn = mxUtils.button(mxResources.get('apply'), function () {
 		texts.push(neuronSizeValue.value);
-		texts.push(encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value);
+		// texts.push(encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value);
 		try {
 			ui.hideDialog.apply(ui, arguments);
 
@@ -4032,7 +4034,7 @@ ItemPropertiesPanel.prototype.LayerPropertiesDialog = function (div) {
 	neuronSizeValue.style.border = "soild";
 	neuronSizeValue.style.borderWidth = "1.5px";
 	if (properties.get('neuronsize') === undefined) {
-		neuronSizeValue.setAttribute('placeholder', '0');
+		neuronSizeValue.setAttribute('placeholder', '数据格式为tuple,如(10,)');
 	} else {
 		neuronSizeValue.value = properties.get('neuronsize');
 	}
@@ -4079,6 +4081,37 @@ ItemPropertiesPanel.prototype.LayerPropertiesDialog = function (div) {
 	neuronTypeSelect.appendChild(neuronTypeOption2);
 	// neuronTypeSelect.appendChild(neuronTypeOption3);
 	neuronType.appendChild(neuronTypeSelect);
+
+
+	var StatusMonitor = document.createElement("div");
+	StatusMonitor.setAttribute("title", mxResources.get("StatusMonitor"));
+	mxUtils.write(StatusMonitor, mxResources.get("StatusMonitor") + " :");
+	StatusMonitor.setAttribute("type", "text");
+	StatusMonitor.style.marginTop = "6px";
+	StatusMonitor.style.marginBottom = '6px';
+	StatusMonitor.style.marginLeft = "25px";
+	StatusMonitor.style.width = "100%";
+	StatusMonitor.style.height = "20px";
+	StatusMonitor.style.boxSizing = "border-box";
+	var StatusMonitorSelect = document.createElement("select");
+	StatusMonitorSelect.style.width = '150px';
+	StatusMonitorSelect.style.height = "20px";
+	StatusMonitorSelect.style.marginRight = "80px";
+	StatusMonitorSelect.style.float = "right";
+	StatusMonitorSelect.style.border = "soild";
+	StatusMonitorSelect.style.borderWidth = "1.5px";
+	var StatusMonitorOption1 = document.createElement("option");
+	mxUtils.write(StatusMonitorOption1, mxResources.get("StatusMonitorOption1"));
+	var StatusMonitorOption2 = document.createElement("option");
+	mxUtils.write(StatusMonitorOption2, mxResources.get("StatusMonitorOption2"));
+	if (properties.get('StatusMonitor') === mxResources.get("StatusMonitorOption1")) {
+		StatusMonitorOption1.setAttribute("selected", "selected");
+	} else if (properties.get('StatusMonitor') === mxResources.get("StatusMonitorOption2")) {
+		StatusMonitorOption2.setAttribute("selected", "selected");
+	}
+	StatusMonitorSelect.appendChild(StatusMonitorOption1);
+	StatusMonitorSelect.appendChild(StatusMonitorOption2);
+	StatusMonitor.appendChild(StatusMonitorSelect);
 
 	// leak mode
 	var leakMode = document.createElement("div");
@@ -4224,6 +4257,36 @@ ItemPropertiesPanel.prototype.LayerPropertiesDialog = function (div) {
 	resetModeSelect.appendChild(resetModeOption2);
 	resetMode.appendChild(resetModeSelect);
 
+	var PulseMonitor = document.createElement("div");
+	PulseMonitor.setAttribute("title", mxResources.get("pulsemonitorrule"));
+	mxUtils.write(PulseMonitor, mxResources.get("pulsemonitor") + " :");
+	PulseMonitor.setAttribute("type", "text");
+	PulseMonitor.style.marginTop = "6px";
+	PulseMonitor.style.marginBottom = "6px";
+	PulseMonitor.style.marginLeft = "25px";
+	PulseMonitor.style.width = "100%";
+	PulseMonitor.style.height = "20px";
+	PulseMonitor.style.boxSizing = "border-box";
+	var PulseMonitorSelect = document.createElement("select");
+	PulseMonitorSelect.style.width = '150px';
+	PulseMonitorSelect.style.height = "20px";
+	PulseMonitorSelect.style.float = "right";
+	PulseMonitorSelect.style.marginRight = "80px";
+	PulseMonitorSelect.style.border = "soild";
+	PulseMonitorSelect.style.borderWidth = "1.5px";
+	var PulseMonitorOption1 = document.createElement("option");
+	mxUtils.write(PulseMonitorOption1, mxResources.get("PulseMonitorOption1"));
+	var PulseMonitorOption2 = document.createElement("option");
+	mxUtils.write(PulseMonitorOption2, mxResources.get("PulseMonitorOption2"));
+	if (properties.get('pulsemonitor') === mxResources.get("PulseMonitorOption1")) {
+		PulseMonitorOption1.setAttribute("selected", "selected");
+	} else if (properties.get('pulsemonitor') === mxResources.get("PulseMonitorOption2")) {
+		PulseMonitorOption2.setAttribute("selected", "selected");
+	}
+	PulseMonitorSelect.appendChild(PulseMonitorOption1);
+	PulseMonitorSelect.appendChild(PulseMonitorOption2);
+	PulseMonitor.appendChild(PulseMonitorSelect);
+
 	// Voltage threshold
 	vThreshold = document.createElement("div");
 	vThreshold.setAttribute('title', mxResources.get('vthreshold'));
@@ -4260,8 +4323,10 @@ ItemPropertiesPanel.prototype.LayerPropertiesDialog = function (div) {
 	div.appendChild(leakValue);
 	div.appendChild(resetMode);
 	div.appendChild(vThreshold);
+	div.appendChild(StatusMonitor);
+	div.appendChild(PulseMonitor);
 
-	names = ['label', 'layername', 'neuronsize', 'neurontype', 'leakmode', 'leakvalue', 'resetmode', 'vthreshold', 'type'];
+	names = ['label', 'layername', 'neuronsize', 'neurontype', 'leakmode', 'leakvalue', 'resetmode', 'vthreshold', 'StatusMonitor', 'pulsemonitor', 'type'];
 	var addBtn = mxUtils.button(mxResources.get('addProperty'), function () {
 		var name = nameInput.value;
 
@@ -4337,6 +4402,8 @@ ItemPropertiesPanel.prototype.LayerPropertiesDialog = function (div) {
 		texts.push(leakValueValue.value);
 		texts.push(resetModeSelect.options[resetModeSelect.selectedIndex].value);
 		texts.push(vThresholdValue.value);
+		texts.push(StatusMonitorSelect.options[StatusMonitorSelect.selectedIndex].value);
+		texts.push(PulseMonitorSelect.options[PulseMonitorSelect.selectedIndex].value);
 		texts.push('Layer');
 
 		try {
@@ -4753,7 +4820,13 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 		value = obj;
 	}
 	attrs = value.attributes;
-	for (var i = 0; i < attrs.length; i++) properties.set(attrs[i].nodeName, attrs[i].nodeValue);
+	for (var i = 0; i < attrs.length; i++) {
+		console.log(attrs[i].nodeName)
+		console.log('******')
+		console.log(attrs[i].nodeValue)
+		// document.getElementsByName(attrs[i].nodeName).value=attrs[i].nodeValue;
+		properties.set(attrs[i].nodeName, attrs[i].nodeValue);
+	}
 	var meta = {};
 
 	try {
@@ -4849,6 +4922,8 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 	}
 	synapses.appendChild(synapsesValue);
 
+
+
 	//link type
 	var linkType = document.createElement("div");
 	linkType.setAttribute("title", mxResources.get("linktype"));
@@ -4861,11 +4936,14 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 	linkType.style.height = "20px";
 	linkType.style.boxSizing = "border-box";
 	var linkTypeSelect = document.createElement("select");
+	var linkTypeSelect_index=linkTypeSelect.selectedIndex
 	linkTypeSelect.style.width = '150px';
 	linkTypeSelect.style.height = "20px";
-	linkTypeSelect.style.marginLeft = "20px";
+	linkTypeSelect.style.marginLeft = "47px";
 	linkTypeSelect.style.border = "soild";
 	linkTypeSelect.style.borderWidth = "1.5px";
+	linkTypeSelect.id = 'select';
+	linkTypeSelect.onchange = gradeChange;
 	var linkTypeOption0 = document.createElement("option");
 	mxUtils.write(linkTypeOption0, 'FULL');
 	var linkTypeOption1 = document.createElement("option");
@@ -4883,23 +4961,144 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 	} else if (properties.get('linktype') === 'TO OUTPUT') {
 		linkTypeOption3.setAttribute("selected", "selected");
 	}
-	linkTypeSelect.appendChild(linkTypeOption0);
+
 	// linkTypeSelect.appendChild(linkTypeOption1);
-	// linkTypeSelect.appendChild(linkTypeOption2);
+	linkTypeSelect.appendChild(linkTypeOption0);
+	linkTypeSelect.appendChild(linkTypeOption2);
 	linkTypeSelect.appendChild(linkTypeOption3);
+
 	linkType.appendChild(linkTypeSelect);
 
 	// div.appendChild(connectorName);
 	// div.appendChild(synapses);
+	// linkTypeOption0.setAttribute("selected", "selected");
+	var link_type = document.createElement("div");
+	link_type.id = 'select1';
+	link_type.style.display = 'none';
+
+	var kernel_size = document.createElement('div');
+	kernel_size.setAttribute('title', mxResources.get('kernelrule'));
+	mxUtils.write(kernel_size, mxResources.get('kernel_size') + '  :');
+	kernel_size.setAttribute('type', 'text');
+	kernel_size.style.marginTop = "6px";
+	kernel_size.style.marginBottom = '6px';
+	kernel_size.style.marginLeft = "25px";
+	kernel_size.style.width = '100%';
+	kernel_size.style.height = '20px';
+	kernel_size.style.boxSizing = 'border-box';
+
+	var kernel_sizeValue = document.createElement('input');
+	kernel_sizeValue.id = 'kernel_sizeValue_id'
+	kernel_sizeValue.setAttribute('type', 'text');
+	kernel_sizeValue.setAttribute('placeholder', mxResources.get('positiveInteger'));
+	kernel_sizeValue.style.width = '150px';
+	kernel_sizeValue.style.height = '20px';
+	kernel_sizeValue.style.boxSizing = 'border-box';
+	kernel_sizeValue.style.marginLeft = "35px";
+	kernel_sizeValue.style.border = "soild";
+	kernel_sizeValue.style.borderWidth = "1.5px";
+	if (properties.get('kernel_size') === undefined) {
+		kernel_sizeValue.setAttribute('placeholder', '(1,1)等类型');
+	} else {
+		kernel_sizeValue.value = properties.get('kernel_size');
+	}
+	kernel_size.appendChild(kernel_sizeValue);
+
+	var stride = document.createElement('div');
+	stride.setAttribute('title', mxResources.get('kernelrule'));
+	mxUtils.write(stride, mxResources.get('stride') + "  " + '          :');
+	stride.setAttribute('type', 'text');
+	stride.style.marginTop = "6px";
+	stride.style.marginBottom = '6px';
+	stride.style.marginLeft = "25px";
+	stride.style.width = '100%';
+	stride.style.height = '20px';
+	stride.style.boxSizing = 'border-box';
+
+	var strideValue = document.createElement('input');
+	strideValue.id = 'strideValue2_id'
+	strideValue.setAttribute('type', 'text');
+	strideValue.setAttribute('placeholder', mxResources.get('positiveInteger'));
+	strideValue.style.width = '150px';
+	strideValue.style.height = '20px';
+	strideValue.style.boxSizing = 'border-box';
+	strideValue.style.marginLeft = "47px";
+	strideValue.style.border = "soild";
+	strideValue.style.borderWidth = "1.5px";
+	if (properties.get('stride') === undefined) {
+		strideValue.setAttribute('placeholder', '1或者(1,1)等类型');
+	} else {
+		strideValue.value = properties.get('stride');
+	}
+	stride.appendChild(strideValue);
+
+	var padding = document.createElement('div');
+	padding.setAttribute('title', mxResources.get('kernelrule'));
+	mxUtils.write(padding, mxResources.get('padding') + ' :');
+	padding.setAttribute('type', 'text');
+	padding.style.marginTop = "6px";
+	padding.style.marginBottom = '6px';
+	padding.style.marginLeft = "25px";
+	padding.style.width = '100%';
+	padding.style.height = '20px';
+	padding.style.boxSizing = 'border-box';
+
+	var paddingValue = document.createElement('input');
+	paddingValue.id = 'paddingValue_id'
+	paddingValue.setAttribute('type', 'text');
+	paddingValue.setAttribute('placeholder', mxResources.get('positiveInteger'));
+	paddingValue.style.width = '150px';
+	paddingValue.style.height = '20px';
+	paddingValue.style.boxSizing = 'border-box';
+	paddingValue.style.marginLeft = "11px";
+	paddingValue.style.border = "soild";
+	paddingValue.style.borderWidth = "1.5px";
+	if (properties.get('padding') === undefined) {
+		paddingValue.setAttribute('placeholder', '1或者(1,1)等类型');
+	} else {
+		paddingValue.value = properties.get('padding');
+	}
+	padding.appendChild(paddingValue);
+
+	link_type.appendChild(kernel_size);
+	link_type.appendChild(stride);
+	link_type.appendChild(padding);
 	div.appendChild(linkType);
+	div.appendChild(link_type);
+	var test = linkTypeSelect.value;
+		if (test == 'CONV'){
+			link_type.style.display = 'block';
+		}
+		else {
+			link_type.style.display = 'none';
+		}
+	function gradeChange(){
+
+		var test = linkTypeSelect.value;
+		if (test == 'CONV'){
+			link_type.style.display = 'block';
+		}
+		else {
+			link_type.style.display = 'none';
+		}
+       }
+
+
+	// div.appendChild(neuronSize);
 
 	// newProp.appendChild(nameInput);
 	// top.appendChild(newProp);
 	// div.appendChild(top);
-	names = ['label', 'connectorname', 'linktype', 'type'];
+
+
 	var addBtn = mxUtils.button(mxResources.get('addProperty'), function () {
 		var name = nameInput.value;
-
+		var test = linkTypeSelect.value;
+		if (test == 'CONV'){
+			names = ['label', 'connectorname', 'linktype', 'kernel_size', 'stride', 'padding', 'type']
+		} else {
+			names = ['label', 'connectorname', 'linktype', 'type']
+		}
 		// Avoid ':' in attribute names which seems to be valid in Chrome
 		if (name.length > 0 && name != 'label' && name != 'placeholders' && name.indexOf(':') < 0) {
 			try {
@@ -4962,26 +5161,49 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 	cancelBtn.className = 'geBtn';
 
 	var applyBtn = mxUtils.button(mxResources.get('apply'), function () {
+		var test = linkTypeSelect.value;
+		if (test == 'CONV'){
+			names = ['label', 'connectorname', 'linktype', 'kernel_size', 'stride', 'padding', 'type']
+		} else {
+			names = ['label', 'connectorname', 'linktype', 'type']
+		}
+		var test = linkTypeSelect.value;
+		if (test == 'CONV'){
+
+			document.getElementById('select1').style.display = 'block';
+		}
+		else {
+
+			document.getElementById('select1').style.display = 'none';
+		}
 		texts.push("type: " + linkTypeSelect.options[linkTypeSelect.selectedIndex].value);
 		texts.push(connectorNameValue.value);
 		// texts.push(synapsesValue.value);
 		texts.push(linkTypeSelect.options[linkTypeSelect.selectedIndex].value);
+		if (test == 'CONV'){
+			texts.push(kernel_sizeValue.value);
+			texts.push(strideValue.value);
+			texts.push(paddingValue.value);
+		}
 		texts.push('weight');
 		try {
 			ui.hideDialog.apply(ui, arguments);
-
 			// Clones and updates the value
 			value = value.cloneNode(true);
 			var removeLabel = false;
+			value.removeAttribute('kernel_size')
+			value.removeAttribute('stride')
+			value.removeAttribute('padding')
 
 			for (var i = 0; i < names.length; i++) {
+
 				if (texts[i] == null) {
 					value.removeAttribute(names[i]);
 				} else {
-					value.setAttribute(names[i], texts[i]);
-					removeLabel = removeLabel || (names[i] == 'placeholder' &&
+						value.setAttribute(names[i], texts[i]);
+						removeLabel = removeLabel || (names[i] == 'placeholder' &&
 						value.getAttribute('placeholders') == '1');
-				}
+					}
 			}
 			// Removes label if placeholder is assigned
 			if (removeLabel) {
@@ -4990,9 +5212,15 @@ ItemPropertiesPanel.prototype.ConnectorPropertiesDialog = function (div) {
 
 			// Updates the value of the cell (undoable)
 			graph.getModel().setValue(cell, value);
+		// 	if (test == 'CONV'){
+		// 	document.getElementById("neuronSizeValue_id").value=neuronSizeValue.value;
+		// 	document.getElementById("neuronSizeValue2_id").value=neuronSizeValue2.value;
+		// }
 		} catch (e) {
+			console.log('error')
 			mxUtils.alert(e);
-		}
+		};
+
 	});
 	applyBtn.className = 'geBtn gePrimaryBtn';
 
@@ -6881,15 +7109,10 @@ DiagramFormatPanel.prototype.addGlobalProperties = function (div) {
 	learnAlgorithmSelect.style.borderWidth = "1.5px";
 	var learnAlgorithmOption0 = document.createElement("option");
 	mxUtils.write(learnAlgorithmOption0, 'STCA');
-	var learnAlgorithmOption1 = document.createElement("option");
-	mxUtils.write(learnAlgorithmOption1, 'Tempotron_darwin');
 	if (properties.get("learnAlgorithm") === 'STCA') {
 		learnAlgorithmOption0.setAttribute("selected", "selected");
-	} else if (properties.get("learnAlgorithm") === 'Tempotron_darwin') {
-		learnAlgorithmOption1.setAttribute("selected", "selected");
 	}
 	learnAlgorithmSelect.appendChild(learnAlgorithmOption0);
-	learnAlgorithmSelect.appendChild(learnAlgorithmOption1);
 	learnAlgorithm.appendChild(learnAlgorithmSelect);
 
 	// learn rate

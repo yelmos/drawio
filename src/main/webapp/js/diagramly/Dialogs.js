@@ -4851,35 +4851,36 @@ var InputPropertiesDialog = function(ui, cell)
 	encodingTime.appendChild(encodingTimeValue);
 
 	//encoding type
-	var encodingType = document.createElement("div");
-	encodingType.setAttribute("title", mxResources.get("encodingtype"));
-	mxUtils.write(encodingType, mxResources.get("encodingtype") + " :");
-	encodingType.setAttribute("type", "text");
-	encodingType.style.marginTop = "6px";
-	encodingType.style.marginBottom = "6px";
-	encodingType.style.width = "100%";
-	encodingType.style.height = "20px";
-	encodingType.style.boxSizing = "border-box";
-	var encodingTypeSelect = document.createElement("select");
-	encodingTypeSelect.style.width = '150px';
-	encodingTypeSelect.style.height = "20px";
-	encodingTypeSelect.style.marginLeft = "20px";
-	var encodingTypeOption1 = document.createElement("option");
-	mxUtils.write(encodingTypeOption1, 1);
-	var encodingTypeOption2 = document.createElement("option");
-	mxUtils.write(encodingTypeOption2, 2);
+	// var encodingType = document.createElement("div");
+	// encodingType.setAttribute("title", mxResources.get("encodingtype"));
+	// mxUtils.write(encodingType, mxResources.get("encodingtype") + " :");
+	// encodingType.setAttribute("type", "text");
+	// encodingType.style.marginTop = "6px";
+	// encodingType.style.marginBottom = "6px";
+	// encodingType.style.width = "100%";
+	// encodingType.style.height = "20px";
+	// encodingType.style.boxSizing = "border-box";
+	// var encodingTypeSelect = document.createElement("select");
+	// encodingTypeSelect.style.width = '150px';
+	// encodingTypeSelect.style.height = "20px";
+	// encodingTypeSelect.style.marginLeft = "20px";
+	// var encodingTypeOption1 = document.createElement("option");
+	// mxUtils.write(encodingTypeOption1, 1);
+	// var encodingTypeOption2 = document.createElement("option");
+	// mxUtils.write(encodingTypeOption2, 2);
 
-	encodingTypeSelect.appendChild(encodingTypeOption1);
-	encodingTypeSelect.appendChild(encodingTypeOption2);
-	encodingType.appendChild(encodingTypeSelect);
+	// encodingTypeSelect.appendChild(encodingTypeOption1);
+	// encodingTypeSelect.appendChild(encodingTypeOption2);
+	// encodingType.appendChild(encodingTypeSelect);
 
 	// newProp.appendChild(nameInput);
 	// top.appendChild(newProp);
 	div.appendChild(layerName);
-	div.appendChild(encodingTime);
-	div.appendChild(encodingType);
+	// div.appendChild(encodingTime);
+	// div.appendChild(encodingType);
 	// div.appendChild(top);
-	names = ['layername', 'encodingtime', 'encodingtype'];
+	// names = ['layername', 'encodingtime', 'encodingtype'];
+	names = ['layername', 'encodingtime', ];
 	var addBtn = mxUtils.button(mxResources.get('addProperty'), function()
 	{
 		var name = nameInput.value;
@@ -5178,7 +5179,7 @@ var LayerPropertiesDialog = function(ui, cell)
 	neuronSize.style.boxSizing = 'border-box';
 
 	var neuronSizeValue = document.createElement('input');
-	neuronSizeValue.setAttribute('placeholder', '0');
+	neuronSizeValue.setAttribute('placeholder', '数据格式为tuple,如(10,)');
 	neuronSizeValue.setAttribute('type', 'text');
 	neuronSizeValue.style.width = '150px';
 	neuronSizeValue.style.height = '20px';
@@ -5209,6 +5210,27 @@ var LayerPropertiesDialog = function(ui, cell)
 	neuronTypeSelect.appendChild(neuronTypeOption1);
 	neuronTypeSelect.appendChild(neuronTypeOption2);
 	neuronType.appendChild(neuronTypeSelect);
+
+	var StatusMonitor = document.createElement("div");
+	StatusMonitor.setAttribute("title", mxResources.get("StatusMonitor"));
+	mxUtils.write(StatusMonitor, mxResources.get("StatusMonitor") + " :");
+	StatusMonitor.setAttribute("type", "text");
+	StatusMonitor.style.marginTop = "6px";
+	StatusMonitor.style.marginBottom = '6px';
+	StatusMonitor.style.width = "100%";
+	StatusMonitor.style.height = "20px";
+	StatusMonitor.style.boxSizing = "border-box";
+	var StatusMonitorSelect = document.createElement("select");
+	StatusMonitorSelect.style.width = '150px';
+	StatusMonitorSelect.style.height = "20px";
+	StatusMonitorSelect.style.marginLeft = '20px';
+	var StatusMonitorOption1 = document.createElement("option");
+	mxUtils.write(StatusMonitorOption1, 0);
+	var StatusMonitorOption2 = document.createElement("option");
+	mxUtils.write(StatusMonitorOption2, 1);
+	StatusMonitorSelect.appendChild(StatusMonitorOption1);
+	tatusMonitorSelect.appendChild(StatusMonitorOption2);
+	StatusMonitor.appendChild(StatusMonitorSelect);
 
 	// leak mode
 	var leakMode = document.createElement("div");
@@ -5277,6 +5299,29 @@ var LayerPropertiesDialog = function(ui, cell)
 	resetModeSelect.appendChild(resetModeOption2);
 	resetMode.appendChild(resetModeSelect);
 
+
+	var PulseMonitor = document.createElement("div");
+	PulseMonitor.setAttribute("title", mxResources.get("pulsemonitor"));
+	mxUtils.write(PulseMonitor, mxResources.get("pulsemonitor") + " :");
+	PulseMonitor.setAttribute("type", "text");
+	PulseMonitor.style.marginTop = "6px";
+	PulseMonitor.style.marginBottom = "6px";
+	PulseMonitor.style.width = "100%";
+	PulseMonitor.style.height = "20px";
+	PulseMonitor.style.boxSizing = "border-box";
+	var PulseMonitorSelect = document.createElement("select");
+	PulseMonitorSelect.style.width = '150px';
+	PulseMonitorSelect.style.height = "20px";
+	PulseMonitorSelect.style.marginLeft = '20px';
+	var PulseMonitorOption1 = document.createElement("option");
+	mxUtils.write(PulseMonitorOption1, 0);
+	var PulseMonitorOption2 = document.createElement("option");
+	mxUtils.write(PulseMonitorOption2, 1);
+
+	PulseMonitorSelect.appendChild(PulseMonitorOption1);
+	PulseMonitorSelect.appendChild(PulseMonitorOption2);
+	PulseMonitor.appendChild(PulseMonitorSelect);
+
 	// Voltage threshold
 	vThreshold = document.createElement("div");
 	vThreshold.setAttribute('title', mxResources.get('vthreshold'));
@@ -5305,8 +5350,10 @@ var LayerPropertiesDialog = function(ui, cell)
 	div.appendChild(leakValue);
 	div.appendChild(resetMode);
 	div.appendChild(vThreshold);
+	div.appendChild(StatusMonitor);
+	div.appendChild(PulseMonitor);
 
-	names = ['layername', 'neuronsize', 'neurontype', 'leakmode', 'leakvalue', 'resetmode', 'vthreshold'];
+	names = ['layername', 'neuronsize', 'neurontype', 'leakmode', 'leakvalue', 'resetmode', 'vthreshold', 'StatusMonitor', 'pulsemonitor'];
 	var addBtn = mxUtils.button(mxResources.get('addProperty'), function()
 	{
 		var name = nameInput.value;
@@ -5396,7 +5443,8 @@ var LayerPropertiesDialog = function(ui, cell)
 		texts.push(leakValueValue.value);
 		texts.push(resetModeSelect.options[resetModeSelect.selectedIndex].value);
 		texts.push(vThresholdValue.value);
-
+		texts.push(StatusMonitorSelect.options[StatusMonitorSelect.selectedIndex].value);
+		texts.push(PulseMonitorSelect.options[PulseMonitorSelect.selectedIndex].value);
 		try
 		{
 			ui.hideDialog.apply(ui, arguments);
